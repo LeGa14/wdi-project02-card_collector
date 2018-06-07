@@ -5,7 +5,7 @@ const userSchema = new Schema({
     trainerName: String,
     trainerID: Number,
     dateCreated: Date,
-    dateLastupdated: Date
+    dateLastUpdated: Date
 })
 
 module.exports = userSchema
