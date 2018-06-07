@@ -216,3 +216,4 @@ I want to look at a homepage
                         I want to view the results of the search
 
 ***use a prezi to show user journeys
+***this is for testing heroku auto deploy github connection
