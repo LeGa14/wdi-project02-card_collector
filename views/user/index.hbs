@@ -1,0 +1,12 @@
+<h1>All Users</h1>
+
+<ul>
+  {{#each listOfUser}}
+  <li>
+    <a href="/user/{{_id}}">
+      <p>{{username}} Known by other trainers as {{trainerName}}</p>
+      <p>{{dateCreated}}</p>
+    </a>
+  </li>
+  {{/each}}
+</ul>

@@ -217,3 +217,27 @@ I want to look at a homepage
 
 ***use a prezi to show user journeys
 ***this is for testing heroku auto deploy github connection
+
+Where I left off: Thursday
+I was working on my "index GET User" route
+I had just added "module.exports = router" to allow the controller to connect to other files.
+So far, evrything works except an error:
+    ERROR Error: Invalid schema, expected `mongodb` or `mongodb+srv`
+When I return, 
+    I will comment out the mongoose connections and 
+    change to a local connection
+    "mongoose.connection" found in seed file
+    From there, 
+    I will test its functionality locally
+    switch it back if it works
+
+Where I left off : Thursday night
+I had figured out running `heroku local` from the terminal
+I got the client to properly render my first user get route
+however
+the page is empty so
+I need to figure how to connect the database when running tests locally
+so that my seeded data appears
+My mongoose databases are linked to the local server and
+I want to be able to tests my routes without changing them to that.
+I can begin to start on other routes for the user controllers

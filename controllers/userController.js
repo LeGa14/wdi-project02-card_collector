@@ -3,10 +3,9 @@ const router = express.Router()
 const User = require('../models/User')
 
 // INDEX USER
-router.get('/', (req, res) => {
+router.get('/', (req, res, next) => {
     
-    User
-    .find()
+    User.find()
     .then((listOfUsers) => {
         res.render('user/index', {
             listOfUsers
@@ -21,3 +20,5 @@ router.get('/', (req, res) => {
 // EDIT USER
 // UPDATE USER
 // DESTROY USER
+
+module.exports = router

@@ -7,13 +7,14 @@ const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 
 const indexRouter = require('./routes/index')
-const userRouter = require('./controllers/userController')
+const userController = require('./controllers/userController')
 
 const app = express()
 require('dotenv').config()
 
 // connect to database
-mongoose.connect('process.env.MONGODB_URI')
+// mongoose.connect('process.env.MONGODB_URI')
+mongoose.connect('mongodb://localhost:27017/card-collector')// Test mongoDB as local host
   .then(() => {
     console.log('connected to mongoDB')
   })
@@ -34,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 // Controller connections
 app.use('/', indexRouter)
-app.use('/users', userRouter)
+app.use('/user', userController)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
