@@ -6,14 +6,10 @@ const userSchema = new Schema({
     email: String,
     tagline: String,
     userPhoto: String,
-    dateCreated: {
-        type: Date,
-        deafault: new Date()
-    },
-    dateLastUpdated: {
-        type: Date,
-        deafault: new Date()
-    }
+    dateCreated: {type: Date, default: Date.now},
+    dateLastUpdated: {type: Date, default: Date.now}
+    // timestamps: { }
+    
 })
 
 module.exports = userSchema

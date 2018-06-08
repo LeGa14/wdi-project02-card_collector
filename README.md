@@ -262,3 +262,9 @@ from a card collection database into
 a way for users to track their pokemon collection across the various games in pokemon franchise
 Think of it as Bill's PC for all of your Bill's PCs
 Bill's PC is the digital storage system within the original Pokemon handheld video game series. Players were allowed to swap out pokemon from their on-hand party with other caught pokemon that had to be stored digitally due on-hand capacity limit of 6.
+
+I managed to get the new user submission to post. 
+I did run into a problem where my new user submission would produce a duplicate two empty user objects after it, but that issue was solved.
+The problem I faced after that was trying to get the current timestamp of the submission to display. at first i was getting a repeated timestamp value from the initial new submission, but that was solved by changing the schema format of the specific keys in question.
+
+I will now begin editing the the user-edit and user update routes so that they user information can be changed as well as their last updated timestamps.
