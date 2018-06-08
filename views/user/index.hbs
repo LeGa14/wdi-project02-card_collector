@@ -3,12 +3,13 @@
 <ul>
   {{#each listOfUsers}}
   <li>
-    {{!-- <a href="/user/{{_id}}"> --}}
-      <p><span class="blue">{{username}}</span> known by other trainers as <span class="red">{{trainerName}}</span></p>
+    <a href="/user/{{_id}}">
+      <p><span class="blue">{{username}}</span>
+      </a>
+       known by other trainers as <span class="red">{{trainerName}}</span></p>
       <p>This account was created on: <span class="green">{{dateCreated}}</span></p>
       <p>{{username}} last updated their collection on: <span class="green">{{dateLastUpdated}}</span></p>
       <br>
-    </a>
   </li>
   {{/each}}
 </ul>

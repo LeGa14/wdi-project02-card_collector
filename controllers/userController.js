@@ -16,7 +16,16 @@ router.get('/', (req, res, next) => {
 
 // NEW USER
 // CREATE USER
-// SHOW USER
+
+// SHOW 
+router.get('/:id', (req, res) => {
+    
+    User.findById(req.params.id)
+    .then((singleUser) => {
+        res.render('user/show', {singleUser})
+    })
+})
+
 // EDIT USER
 // UPDATE USER
 // DESTROY USER
