@@ -12,35 +12,40 @@ mongoose.connect(process.env.MONGODB_URI)
         console.log('ERROR', err)
     })
 
+
 User.remove()
     .then(() => {
 
         //creating new User test data
         const user0 = new User({
             username: 'BackToTheCool',
-            trainerName: 'Lamont',
-            trainerID: 000001,
+            email: 'thisguy@thatmail.com',
+            tagline: 'This is my world! And TAGLINE. YEAH!!!',
+            userPhoto: 'thisCouldbealink',
             dateCreated: Date.now(),
             dateLastUpdated: Date.now()
         })
         const user1 = new User({
             username: 'legacy_092',
-            trainerName: 'Red',
-            trainerID: 000002,
+            email: 'thatguy@thismail.com',
+            tagline: 'This is my world! And TAGLINE. YEAH!!!',
+            userPhoto: 'thisCouldbealink',
             dateCreated: Date.now(),
             dateLastUpdated: Date.now()
         })
         const user2 = new User({
             username: 'glemonjr68',
-            trainerName: 'Blue',
-            trainerID: 000003,
+            email: 'anotherperson@anothermail.com',
+            tagline: 'This is my world! And TAGLINE. YEAH!!!',
+            userPhoto: 'thisCouldbealink',
             dateCreated: Date.now(),
             dateLastUpdated: Date.now()
         })
         const user3 = new User({
             username: 'FroZolar92',
-            trainerName: '21 Savage',
-            trainerID: 000004,
+            email: 'finalseed@user.com',
+            tagline: 'This is my world! And TAGLINE. YEAH!!!',
+            userPhoto: 'thisCouldbealink',
             dateCreated: Date.now(),
             dateLastUpdated: Date.now()
         })

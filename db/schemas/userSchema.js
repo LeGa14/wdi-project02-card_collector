@@ -1,9 +1,11 @@
 const Schema = require('mongoose').Schema
 
 const userSchema = new Schema({
+    
     username: String,
-    trainerName: String,
-    trainerID: Number,
+    email: String,
+    tagline: String,
+    userPhoto: String,
     dateCreated: {
         type: Date,
         deafault: new Date()

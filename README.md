@@ -254,3 +254,11 @@ but I also need a way to confirm information
 in the mongodb is actually being rendered.
 I can run tests using variations to the seed file, but
 I still need a way to confirm their changes without mongodb compass.
+
+I managed to get the database info to display properly using working INDEX and individual SHOW routes.
+Doing this, made me realize some redundancies in my ERD Model structure, so
+I've retooled the purpose of the app
+from a card collection database into
+a way for users to track their pokemon collection across the various games in pokemon franchise
+Think of it as Bill's PC for all of your Bill's PCs
+Bill's PC is the digital storage system within the original Pokemon handheld video game series. Players were allowed to swap out pokemon from their on-hand party with other caught pokemon that had to be stored digitally due on-hand capacity limit of 6.
