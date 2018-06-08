@@ -1,15 +1,16 @@
 <h1>
     <span class="blue">
-    {{singleUser.username}}
+    {{shownUser.username}}
     </span>
 </h1>
-<img src="{{singleUser.userPhoto}}" alt="{{singleUser.username}}'s Photo">
+<img src="{{shownUser.userPhoto}}" alt="{{shownUser.username}}'s Photo">
 <h3>
     <span class="red">
-    {{singleUser.tagline}}
+    {{shownUser.tagline}}
     </span>
 </h3>
-<p>Email: {{singleUser.email}}</p>
-<p>User Since: {{singleUser.dateCreated}}</p>
-<p>Last Updated: {{singleUser.dateLastUpdated}}</p>
+<p>Email: {{shownUser.email}}</p>
+<p>User Since: {{shownUser.dateCreated}}</p>
+<p>Last Updated: {{shownUser.dateLastUpdated}}</p>
 <a href="/user/">Return to All Users</a>
+<a href="/user/{{shownUser._id}}/edit">Change User Info</a>

@@ -35,14 +35,31 @@ router.post('/', (req, res) => {
 router.get('/:id', (req, res) => {
 
     User.findById(req.params.id)
-        .then((singleUser) => {
-            res.render('user/show', { singleUser })
+        .then((shownUser) => {
+            res.render('user/show', { shownUser })
         })
         .catch((err) => res.send(err))
 })
 
-// EDIT USER
+// EDIT 
+router.get('/:id/edit', (req, res) => {
+    
+    User.findById(req.params.id)
+        .then((userToChange) => {
+            res.render('user/edit', {userToChange})
+        })
+        .catch((err) => res.send(err))
+})
+
 // UPDATE USER
+router.put('/:id', (req, res) => {
+    User.findByIdAndUpdate(req.params.id, req.body, {new: true})
+        .then(() => {
+            res.redirect(`/user/${req.params.id}`)
+        })
+        .catch((err) => res.send(err))
+})
+
 // DESTROY USER
 
 module.exports = router

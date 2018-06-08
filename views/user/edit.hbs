@@ -1,0 +1,22 @@
+<h1>Edit the User: {{username}}</h1>
+
+<form action="/user/{{userToChange._id}}?_method=PUT" method="POST">
+    <div>
+        <label for="email">E-Mail: </label>
+        <input type="text" name="email" value={{userToChange.email}} />
+    </div>
+    <div>
+        <label for="username">Username: </label>
+        <input type="text" name="username" value={{userToChange.username}} />
+    </div>
+    <div>
+        <label for="tagline">Tagline: </label>
+        <input type="text" name="tagline" value={{userToChange.tagline}} />
+   </div>
+    <div>
+        <label for="userPhoto">User Photo: </label>
+        <input type="text" name="userPhoto" value={{userToChange.userPhoto}} />
+    </div>
+    <button type="submit">Save User Details
+    </button>
+</form>
