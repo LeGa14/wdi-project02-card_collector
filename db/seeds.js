@@ -21,7 +21,7 @@ User.remove()
             username: 'BackToTheCool',
             email: 'thisguy@thatmail.com',
             tagline: 'This is my world! And TAGLINE. YEAH!!!',
-            userPhoto: 'http://www.pokestadium.com/assets/img/tools/trainercard/trainers/male/13.png',
+            userPhoto: 'https://www.placecage.com/gif/284/196',
             dateCreated: Date.now(),
             dateLastUpdated: Date.now()
         })
@@ -29,7 +29,7 @@ User.remove()
             username: 'legacy_092',
             email: 'thatguy@thismail.com',
             tagline: 'This is my world! And TAGLINE. YEAH!!!',
-            userPhoto: 'http://www.pokestadium.com/assets/img/tools/trainercard/trainers/male/11.png',
+            userPhoto: 'https://www.placecage.com/gif/250/200',
             dateCreated: Date.now(),
             dateLastUpdated: Date.now()
         })
@@ -37,7 +37,7 @@ User.remove()
             username: 'glemonjr68',
             email: 'anotherperson@anothermail.com',
             tagline: 'This is my world! And TAGLINE. YEAH!!!',
-            userPhoto: 'http://www.pokestadium.com/assets/img/tools/trainercard/trainers/male/19.png',
+            userPhoto: 'https://www.placecage.com/gif/275/200',
             dateCreated: Date.now(),
             dateLastUpdated: Date.now()
         })
@@ -45,7 +45,7 @@ User.remove()
             username: 'FroZolar92',
             email: 'finalseed@user.com',
             tagline: 'This is my world! And TAGLINE. YEAH!!!',
-            userPhoto: 'http://www.pokestadium.com/assets/img/tools/trainercard/trainers/male/54.png',
+            userPhoto: 'https://www.placecage.com/gif/300/200',
             dateCreated: Date.now(),
             dateLastUpdated: Date.now()
         })
