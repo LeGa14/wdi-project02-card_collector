@@ -241,3 +241,16 @@ so that my seeded data appears
 My mongoose databases are linked to the local server and
 I want to be able to tests my routes without changing them to that.
 I can begin to start on other routes for the user controllers
+
+Again:
+I figured out 
+how to locally connect the 
+mongodb to heroku without a problem.
+I now need to properly get 
+the info from the database
+onto the page
+and display properly. I have atab open with a near-solution
+but I also need a way to confirm information
+in the mongodb is actually being rendered.
+I can run tests using variations to the seed file, but
+I still need a way to confirm their changes without mongodb compass.
