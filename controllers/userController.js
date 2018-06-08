@@ -43,17 +43,17 @@ router.get('/:id', (req, res) => {
 
 // EDIT 
 router.get('/:id/edit', (req, res) => {
-    
+
     User.findById(req.params.id)
         .then((userToChange) => {
-            res.render('user/edit', {userToChange})
+            res.render('user/edit', { userToChange })
         })
         .catch((err) => res.send(err))
 })
 
 // UPDATE USER
 router.put('/:id', (req, res) => {
-    User.findByIdAndUpdate(req.params.id, req.body, {new: true})
+    User.findByIdAndUpdate(req.params.id, req.body, { new: true })
         .then(() => {
             res.redirect(`/user/${req.params.id}`)
         })
@@ -61,5 +61,13 @@ router.put('/:id', (req, res) => {
 })
 
 // DESTROY USER
+router.delete('/:id', (req, res) => {
+    User.findByIdAndRemove(req.params.id)
+        .then(() => {
+            console.log('That user is no longer a Pokemon Trainer.')
+            console.log('Good Riddens')
+            res.redirect('/user')
+        })    
+})
 
 module.exports = router

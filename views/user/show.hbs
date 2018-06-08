@@ -14,3 +14,6 @@
 <p>Last Updated: {{shownUser.dateLastUpdated}}</p>
 <a href="/user/">Return to All Users</a>
 <a href="/user/{{shownUser._id}}/edit">Change User Info</a>
+<form action="/user/{{shownUser._id}}?_method=DELETE" method="POST">
+  <button type="submit">Delete User</button>
+</form>

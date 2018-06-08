@@ -6,9 +6,9 @@ const userSchema = new Schema({
     email: String,
     tagline: String,
     userPhoto: String,
+    // timestamps: { dateCreated: 'created_at', dateLastUpdated: 'updated_at' }
     dateCreated: {type: Date, default: Date.now},
     dateLastUpdated: {type: Date, default: Date.now}
-    // timestamps: { }
     
 })
 
