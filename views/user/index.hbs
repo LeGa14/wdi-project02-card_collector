@@ -1,14 +1,20 @@
 <h1>All Users</h1>
 
+<p>
+    <a href="/user/new/">Create a new user</a>
+</p>
+
 <ul>
-  {{#each listOfUsers}}
-  <li>
-    <a href="/user/{{_id}}">
-      <p><span class="blue">{{username}}</span>
-      </a></p>
-      <p>This account was created on: <span class="red">{{dateCreated}}</span></p>
-      <p>{{username}} last updated their collection on: <span class="red">{{dateLastUpdated}}</span></p>
-      <br>
-  </li>
-  {{/each}}
+    {{#each listOfUsers}}
+    <li>
+        <p>
+            <a href="/user/{{_id}}"><span class="blue">{{username}}</span></a>
+            <br>
+            <img src="{{singleUser.userPhoto}}" alt="{{singleUser.username}}'s Photo">
+        </p>
+        <p>This account was created on: <span class="red">{{dateCreated}}</span></p>
+        <p>{{username}} last updated their collection on: <span class="red">{{dateLastUpdated}}</span></p>
+        <br>
+    </li>
+    {{/each}}
 </ul>

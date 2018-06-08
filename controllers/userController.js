@@ -15,7 +15,19 @@ router.get('/', (req, res, next) => {
 })
 
 // NEW USER
-// CREATE USER
+router.get('/new', (req, res) => {
+    res.render('user/new')
+})
+
+// CREATE 
+router.post('/', (req, res) => {
+    const newUser = req.body
+    User
+        .create(newUser)
+        .then(() => {
+            res.redirect('/user')
+        })
+})
 
 // SHOW 
 router.get('/:id', (req, res) => {
