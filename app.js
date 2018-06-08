@@ -36,6 +36,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 // Controller connections
 app.use('/', indexRouter)
 app.use('/user', userController)
+app.use('/user/:userId/trainer', trainerController)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

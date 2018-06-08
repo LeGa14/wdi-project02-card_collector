@@ -1,4 +1,5 @@
 const Schema = require('mongoose').Schema
+const trainerSchema = require('./trainerSchema')
 
 const userSchema = new Schema({
     
@@ -8,7 +9,9 @@ const userSchema = new Schema({
     userPhoto: String,
     // timestamps: { dateCreated: 'created_at', dateLastUpdated: 'updated_at' }
     dateCreated: {type: Date, default: Date.now},
-    dateLastUpdated: {type: Date, default: Date.now}
+    dateLastUpdated: {type: Date, default: Date.now},
+
+    trainers: [trainerSchema]
     
 })
 
