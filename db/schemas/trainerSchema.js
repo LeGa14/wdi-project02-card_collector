@@ -1,4 +1,4 @@
-const Trainer = require('mongoose').Schema
+const Schema = require('mongoose').Schema
 
 const trainerSchema = new Schema({
     name: String,
