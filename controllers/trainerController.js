@@ -29,7 +29,29 @@ trainerRouter.get('/', (req, res) => {
 })
 
 // NEW
+trainerRouter.get('/new', (req, res) => {
+    res.render('trainer/new', {
+        userId: req.params.userId,
+        // currentUser: User.findById(req.params.userId)        
+    })
+})
+
 // CREATE
+trainerRouter.post('/', (req, res) => {
+
+    const newTrainer = new Trainer(req.body)
+
+    User.findById(req.params.userId)
+        .then((user) => {
+            user.trainers.push(newTrainer)
+
+            return user.save()
+        })
+        .then(() => {
+            res.redirect(`/user/${req.params.userId}/trainer`)
+        })
+})
+
 // SHOW
 trainerRouter.get('/:trainerId', (req, res) => {
     // let currentUser = User.findById(userId)
@@ -46,12 +68,25 @@ trainerRouter.get('/:trainerId', (req, res) => {
         })
         .catch((err) => res.send(err))
 
-        // post.comments.id(my_id).remove();
-        // post.save(function (err) {
-        //   // embedded comment with id `my_id` removed!
-        // });
+    // post.comments.id(my_id).remove();
+    // post.save(function (err) {
+    //   // embedded comment with id `my_id` removed!
+    // });
 })
 
 // DESTROY
+trainerRouter.delete('/:trainerId', (req, res) => {
+    User.findByIdAndUpdate(req.params.userId, {
+        $pull: {
+            trainers: { _id: req.params.trainerId }
+        }
+    })
+    .then((user) => {
+            // user.trainers.id(req.params.trainerId).remove()
+            console.log(`${user.username}'s trainer has been deleted.`)
+            console.log(`They must not have made the cut.`)
+            res.redirect(`/user/${user._id}/trainer`)
+        })
+})
 
 module.exports = trainerRouter

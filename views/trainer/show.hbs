@@ -15,6 +15,6 @@
 <p>Trainer ID: <span class="green">{{foundTrainer.trainerId}}</span></p>
 <a href="/user/{{user._id}}/trainer">Return to other Trainers</a> | 
 <a href="/user/{{user._id}}/{{trainerId}}/edit">Change Trainer Info</a>
-<form action="/user/{{_id}}?_method=DELETE" method="POST">
-  <button type="submit">Delete User</button>
+<form action="/user/{{user._id}}/trainer/{{foundTrainer._id}}?_method=DELETE" method="POST">
+  <button type="submit">Delete Trainer</button>
 </form>

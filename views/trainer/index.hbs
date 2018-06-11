@@ -4,6 +4,10 @@
 {{!-- <p>
     <a href="/trainer/new/">Create a new trainer</a>
 </p> --}}
+<p>
+    <a href="/user/">Back to Users</a> | 
+    <a href="/user/{{user._id}}/trainer/new"> Create a New Trainer for {{user.username}}</a>
+</p>
 
 <ul>
     {{#each listOfTrainers}}

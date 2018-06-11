@@ -4,8 +4,8 @@ const Trainer = require('../models/Trainer')
 
 require('dotenv').config()
 
-mongoose.connect('mongodb://localhost:27017/card-collector')// Test mongoDB as local host
-// mongoose.connect(process.env.MONGODB_URI)
+// mongoose.connect('mongodb://localhost:27017/card-collector')// Test mongoDB as local host
+mongoose.connect(process.env.MONGODB_URI)
     .then(() => {
         console.log('Card Collector "seeds.js" connected to mongoDB')
     })
