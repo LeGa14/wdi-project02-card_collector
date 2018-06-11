@@ -9,6 +9,7 @@ const methodOverride = require('method-override')
 const indexRouter = require('./routes/index')
 const userController = require('./controllers/userController')
 const trainerController = require('./controllers/trainerController')
+const monsterController = require('./controllers/monsterController')
 
 const app = express()
 require('dotenv').config()
@@ -38,6 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use('/', indexRouter)
 app.use('/user', userController)
 app.use('/user/:userId/trainer', trainerController)
+app.use('/user/:userId/trainer/trainerId/monster', monsterController)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
