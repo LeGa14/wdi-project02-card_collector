@@ -1,20 +1,20 @@
 <h1>
     <span class="blue">
-    {{foundTrainer.name}}
+    {{foundMonster.name}}
     </span>
 </h1>
-<img src="{{foundTrainer.sprite}}" alt="{{foundTrainer.name}}'s Photo">
-<h3>A pokemon trainer from the 
+<img src="{{foundMonster.sprite}}" alt="{{foundMonster.name}}'s Photo">
+<h3>A pokemon monster from the 
     <span class="red">
-    {{foundTrainer.region}}
+    {{foundMonster.region}}
     </span>
      Region
 </h3>
-<p>Gender: {{foundTrainer.gender}}</p>
-<p>User Since: <span class="green">{{foundTrainer.age}} years old</span></p>
-<p>Trainer ID: <span class="green">{{foundTrainer.trainerId}}</span></p>
-<a href="/user/{{user._id}}/trainer">Return to other Trainers</a> | 
-<a href="/user/{{user._id}}/{{trainerId}}/edit">Change Trainer Info</a>
-<form action="/user/{{user._id}}/trainer/{{foundTrainer._id}}?_method=DELETE" method="POST">
-  <button type="submit">Delete Trainer</button>
+<p>Gender: {{foundMonster.gender}}</p>
+<p>User Since: <span class="green">{{foundMonster.age}} years old</span></p>
+<p>Monster ID: <span class="green">{{foundMonster.monsterId}}</span></p>
+<a href="/trainer/{{trainer._id}}/monster">Return to other Monsters</a> | 
+<a href="/trainer/{{trainer._id}}/{{monsterId}}/edit">Change Monster Info</a>
+<form action="/trainer/{{trainer._id}}/monster/{{foundMonster._id}}?_method=DELETE" method="POST">
+  <button type="submit">Delete Monster</button>
 </form>
