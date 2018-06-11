@@ -1,0 +1,25 @@
+<h1>{{trainer.name}}'s Monster</h1>
+<h3>There are {{listOfMonster.length}} total monster.</h3>
+
+{{!-- <p>
+    <a href="/trainer/new/">Create a new trainer</a>
+</p> --}}
+<p>
+    <a href="/trainer/">Back to Users</a> | 
+    <a href="/trainer/{{trainer._id}}/trainer/new"> Create a New Monster for {{trainer.name}}</a>
+</p>
+
+<ul>
+    {{#each listOfMonster}}
+    <li>
+        <p>
+            <a href="/trainer/{{../trainer._id}}/trainer/{{_id}}"><span class="blue">{{name}}</span></a>
+            <br>
+            <img src="{{sprite}}" alt="{{name}}'s Sprite">
+        </p>
+        <p>This trainer is from the <span class="red">{{region}}</span> region.</p>
+        <p>This trainer is <span class="red">{{age}}</span> years old.</p>
+        <br>
+    </li>
+    {{/each}}
+</ul>

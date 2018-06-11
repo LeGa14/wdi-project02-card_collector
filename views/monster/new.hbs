@@ -1,0 +1,25 @@
+<h1>Create a New User</h1>
+
+<form action="/user/{{userId}}/trainer" method="POST">
+    <div>
+        <label for="name">Trainer Name: </label>
+        <input type="text" name="name" placeholder="Trainer Name" />
+    </div>
+    <div>
+        <label for="Region">Region: </label>
+        <input type="text" name="region" placeholder="Region" />
+    </div>
+    <div>
+        <label for="age">Age: </label>
+        <input type="text" name="age" placeholder="Age" />
+    </div>
+    <div>
+        <label for="gender">Gender: </label>
+        <input type="text" name="gender" placeholder="Gender" />
+    </div>
+    <div>
+        <label for="sprite">Trainer Sprite (link/URL): </label>
+        <input type="text" name="sprite" placeholder="Trainer Sprite Link" />
+    </div>
+    <button type="submit">Save New Trainer</button>
+</form>
