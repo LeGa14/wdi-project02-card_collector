@@ -1,10 +1,12 @@
-const Schema = require('mongoose').Schema
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
 const trainerSchema = new Schema({
     name: String,
     region: String,
     gender: String,
-    trainerID: String,
+    userId: String,
+    trainerId: String,
     age: Number,
     sprite: String
 })

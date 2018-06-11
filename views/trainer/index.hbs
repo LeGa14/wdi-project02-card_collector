@@ -1,0 +1,21 @@
+<h1>Trainers</h1>
+<h3>There are {{listOfTrainers.length}} total trainers.</h3>
+
+{{!-- <p>
+    <a href="/trainer/new/">Create a new trainer</a>
+</p> --}}
+
+<ul>
+    {{#each listOfTrainers}}
+    <li>
+        <p>
+            <a href="/trainer/{{_id}}"><span class="blue">{{name}}</span></a>
+            <br>
+            <img src="{{sprite}}" alt="{{name}}'s Photo">
+        </p>
+        <p>This account was created on: <span class="red">{{dateCreated}}</span></p>
+        <p>{{name}} last updated their collection on: <span class="red">{{dateLastUpdated}}</span></p>
+        <br>
+    </li>
+    {{/each}}
+</ul>

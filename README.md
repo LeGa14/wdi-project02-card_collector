@@ -268,3 +268,10 @@ I did run into a problem where my new user submission would produce a duplicate 
 The problem I faced after that was trying to get the current timestamp of the submission to display. at first i was getting a repeated timestamp value from the initial new submission, but that was solved by changing the schema format of the specific keys in question.
 
 I will now begin editing the the user-edit and user update routes so that they user information can be changed as well as their last updated timestamps.
+
+I have begun working on the second model(for trainers). 
+I have also thought of some ways one might be able to make the crud routing more DRY. It involves just applying the main redundant aspects to their own file that can be exported for simplifying the CRUD creation process. and have the actual controllers rely on variables as opposed to the same text with sight differences.
+But anywho...
+I have managed to set up a schema and the subsequent model for my Trainers portion of the app.
+Unfortunately, the app no longer functions because "ReferenceError: trainerController is not defined at Object.<anonymous>" [I'll Google it].
+I'm about to switch back over to host the mongodb on a local server to confirm that ALL of the information from the seeds file is making its way in correctly. I doubt I'll have an issue here because the file seeds without issue. If I can get this working, the more/most intricate third model for actual pokemon data storage should be somewhat easier with regards to process and nested information understanding.
