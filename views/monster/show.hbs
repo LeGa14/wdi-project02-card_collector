@@ -13,8 +13,8 @@
 <p>Gender: {{foundMonster.gender}}</p>
 <p>User Since: <span class="green">{{foundMonster.age}} years old</span></p>
 <p>Monster ID: <span class="green">{{foundMonster.monsterId}}</span></p>
-<a href="/trainer/{{trainer._id}}/monster">Return to other Monsters</a> | 
-<a href="/trainer/{{trainer._id}}/{{monsterId}}/edit">Change Monster Info</a>
-<form action="/trainer/{{trainer._id}}/monster/{{foundMonster._id}}?_method=DELETE" method="POST">
+<a href="/user/{{userId}}/trainer/{{trainer._id}}/monster">Return to other Monsters</a> | 
+<a href="/user/{{userId}}/trainer/{{trainer._id}}/{{monsterId}}/edit">Change Monster Info</a>
+<form action="/user/{{userId}}/trainer/{{trainer._id}}/monster/{{foundMonster._id}}?_method=DELETE" method="POST">
   <button type="submit">Delete Monster</button>
 </form>

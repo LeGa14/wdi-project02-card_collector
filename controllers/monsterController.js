@@ -7,7 +7,7 @@ const Trainer = require('../models/Trainer')
 const Monster = require('../models/Monster')
 
 userRouter.use('/user/:userId/trainer', monsterRouter)
-trainerRouter.use('/user/:userId/trainer', monsterRouter)
+trainerRouter.use('/user/:userId/trainer/:trainerId', monsterRouter)
 
 // INDEX MONSTERS
 // NEW MONSTER

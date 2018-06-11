@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const User = require('../models/User')
 const Trainer = require('../models/Trainer')
+const Monster = require('../models/Monster')
 
 require('dotenv').config()
 
@@ -17,6 +18,28 @@ mongoose.connect(process.env.MONGODB_URI)
 User.remove()
     .then(() => {
 
+        //creating new Monster reset/test data
+        const monster0 = new Monster({
+            monster: 'Pikachu',
+            nickname: 'Sparky',
+            level: 99,
+            sprite: 'https://img.pokemondb.net/sprites/black-white/anim/normal/pikachu-f.gif'
+        })
+        const monster1 = new Monster({
+            monster: 'Eevee',
+            nickname: 'Eevee',
+            level: 72,
+            sprite: 'https://img.pokemondb.net/sprites/black-white/anim/normal/eevee.gif'
+        })
+        const monster2 = new Monster({
+            monster: 'Lugia',
+            nickname: 'Siilver Mascot',
+            level: 15,
+            sprite: 'https://img.pokemondb.net/sprites/black-white/anim/normal/lugia.gif'
+        })
+
+        const testMonsters = [monster0, monster1, monster2]
+
         //creating new Trainer reset/test data
         const trainer0 = new Trainer({
             name: 'Blue',
@@ -24,7 +47,8 @@ User.remove()
             gender: 'male',
             trainerId: 'stringONumbers',
             age: 25,
-            sprite: 'http://www.pokestadium.com/assets/img/tools/trainercard/trainers/male/46.png'
+            sprite: 'http://www.pokestadium.com/assets/img/tools/trainercard/trainers/male/46.png',
+            monsters: testMonsters
         })
         const trainer1 = new Trainer({
             name: 'Red',
@@ -32,7 +56,8 @@ User.remove()
             gender: 'female',
             trainerId: 'stringONumbers',
             age: 21,
-            sprite: 'http://www.pokestadium.com/assets/img/tools/trainercard/trainers/female/42.png'
+            sprite: 'http://www.pokestadium.com/assets/img/tools/trainercard/trainers/female/42.png',
+            monsters: testMonsters
         })
         const trainer2 = new Trainer({
             name: 'Silver',
@@ -40,7 +65,8 @@ User.remove()
             gender: 'male',
             trainerId: 'stringONumbers',
             age: 18,
-            sprite: 'http://www.pokestadium.com/assets/img/tools/trainercard/trainers/male/106.png'
+            sprite: 'http://www.pokestadium.com/assets/img/tools/trainercard/trainers/male/106.png',
+            monsters: testMonsters
         })
         const trainer3 = new Trainer({
             name: 'Crystal',
@@ -48,7 +74,8 @@ User.remove()
             gender: 'female',
             trainerId: 'stringONumbers',
             age: 25,
-            sprite: 'http://www.pokestadium.com/assets/img/tools/trainercard/trainers/female/84.png'
+            sprite: 'http://www.pokestadium.com/assets/img/tools/trainercard/trainers/female/84.png',
+            monsters: testMonsters
         })
 
         //creating new User reset/test data
