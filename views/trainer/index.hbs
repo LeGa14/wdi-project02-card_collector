@@ -1,4 +1,4 @@
-<h1>Trainers</h1>
+<h1>{{user.username}}'s Trainers</h1>
 <h3>There are {{listOfTrainers.length}} total trainers.</h3>
 
 {{!-- <p>
@@ -9,12 +9,12 @@
     {{#each listOfTrainers}}
     <li>
         <p>
-            <a href="/trainer/{{_id}}"><span class="blue">{{name}}</span></a>
+            <a href="/user/{{../user._id}}/trainer/{{_id}}"><span class="blue">{{name}}</span></a>
             <br>
-            <img src="{{sprite}}" alt="{{name}}'s Photo">
+            <img src="{{sprite}}" alt="{{name}}'s Sprite">
         </p>
-        <p>This account was created on: <span class="red">{{dateCreated}}</span></p>
-        <p>{{name}} last updated their collection on: <span class="red">{{dateLastUpdated}}</span></p>
+        <p>This trainer is from the <span class="red">{{region}}</span> region.</p>
+        <p>This trainer is <span class="red">{{age}}</span> years old.</p>
         <br>
     </li>
     {{/each}}

@@ -1,0 +1,20 @@
+<h1>
+    <span class="blue">
+    {{foundTrainer.name}}
+    </span>
+</h1>
+<img src="{{foundTrainer.sprite}}" alt="{{foundTrainer.name}}'s Photo">
+<h3>A pokemon trainer from the 
+    <span class="red">
+    {{foundTrainer.region}}
+    </span>
+     Region
+</h3>
+<p>Gender: {{foundTrainer.gender}}</p>
+<p>User Since: <span class="green">{{foundTrainer.age}} years old</span></p>
+<p>Trainer ID: <span class="green">{{foundTrainer.trainerId}}</span></p>
+<a href="/user/{{user._id}}/trainer">Return to other Trainers</a> | 
+<a href="/user/{{user._id}}/{{trainerId}}/edit">Change Trainer Info</a>
+<form action="/user/{{_id}}?_method=DELETE" method="POST">
+  <button type="submit">Delete User</button>
+</form>

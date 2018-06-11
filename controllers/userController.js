@@ -34,9 +34,17 @@ router.post('/', (req, res) => {
 // SHOW 
 router.get('/:id', (req, res) => {
 
-    User.findById(req.params.id)
+    // define the user's ID
+    const thisUserId = req.params.id
+    // find the user based on the ID 
+    User.findById(thisUserId)
+        // then take that user being shown
         .then((shownUser) => {
-            res.render('user/show', { shownUser })
+            // render its information using the USER SHOW view
+            res.render('user/show', {
+                // the view will receive the UserID and shownUser Object
+                thisUserId,
+                shownUser})
         })
         .catch((err) => res.send(err))
 })
