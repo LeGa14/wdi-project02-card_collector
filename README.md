@@ -275,3 +275,7 @@ But anywho...
 I have managed to set up a schema and the subsequent model for my Trainers portion of the app.
 Unfortunately, the app no longer functions because "ReferenceError: trainerController is not defined at Object.<anonymous>" [I'll Google it].
 I'm about to switch back over to host the mongodb on a local server to confirm that ALL of the information from the seeds file is making its way in correctly. I doubt I'll have an issue here because the file seeds without issue. If I can get this working, the more/most intricate third model for actual pokemon data storage should be somewhat easier with regards to process and nested information understanding.
+
+Second Level of routing is complete.
+I'm trying to decsipher the relationships between the first two and figure out how they interact with one another.
+From there, I hope to link the third level of routing up and make some sense of what's going on. I think I need to disconnect all UserRouting connections form the Monster route because it uses the Trainer route which uses the User Routes already. I think I'm solely supposed to focus on the the Parent-Child relations ship and not the whole family, because that might cause the system to iterate within itself. leading to malfuncitons in the code and not producing the desired result.

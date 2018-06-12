@@ -15,8 +15,8 @@ const app = express()
 require('dotenv').config()
 
 // connect to database
-// mongoose.connect('mongodb://localhost:27017/card-collector')// Test mongoDB as local host
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect('mongodb://localhost:27017/card-collector')// Test mongoDB as local host
+// mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     console.log('connected to mongoDB')
   })
@@ -39,7 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use('/', indexRouter)
 app.use('/user', userController)
 app.use('/user/:userId/trainer', trainerController)
-app.use('/user/:userId/trainer/trainerId/monster', monsterController)
+app.use('/user/:userId/trainer/:trainerId/monster', monsterController)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

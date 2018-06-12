@@ -78,4 +78,9 @@ router.delete('/:id', (req, res) => {
         })    
 })
 
+// router.use('/:id/trainer', function(req, res, next) {
+//     req.id = req.params.id;
+//     next()
+//   }, trainer);
+
 module.exports = router

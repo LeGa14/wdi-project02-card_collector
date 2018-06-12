@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+const monsterSchema = require('./monsterSchema')
 
 const trainerSchema = new Schema({
     name: String,
@@ -8,7 +9,9 @@ const trainerSchema = new Schema({
     userId: String,
     trainerId: String,
     age: Number,
-    sprite: String
+    sprite: String,
+
+    monsters: [monsterSchema]
 })
 
 module.exports = trainerSchema

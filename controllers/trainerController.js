@@ -81,7 +81,7 @@ trainerRouter.delete('/:trainerId', (req, res) => {
             trainers: { _id: req.params.trainerId }
         }
     })
-    .then((user) => {
+        .then((user) => {
             // user.trainers.id(req.params.trainerId).remove()
             console.log(`${user.username}'s trainer has been deleted.`)
             console.log(`They must not have made the cut.`)
