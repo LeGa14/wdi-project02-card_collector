@@ -9,9 +9,8 @@ const trainerSchema = new Schema({
     userId: String,
     trainerId: String,
     age: Number,
-    sprite: String,
+    sprite: String
 
-    monsters: [monsterSchema]
 })
 
 module.exports = trainerSchema
