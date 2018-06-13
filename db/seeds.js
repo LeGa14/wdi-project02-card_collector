@@ -38,7 +38,7 @@ User.remove()
             sprite: 'https://img.pokemondb.net/sprites/black-white/anim/normal/lugia.gif'
         })
 
-        // const testMonsters = [monster0, monster1, monster2]
+        const currentMonsters = [monster0, monster1, monster2]
 
         //creating new Trainer reset/test data
         const trainer0 = new Trainer({
@@ -77,6 +77,8 @@ User.remove()
             sprite: 'http://www.pokestadium.com/assets/img/tools/trainercard/trainers/female/84.png',
             monsters: [monster0, monster1, monster2]
         })
+
+        const currentTrainers = [trainer0, trainer1, trainer2, traine3]
 
         //creating new User reset/test data
         const user0 = new User({
@@ -118,6 +120,8 @@ User.remove()
 
         const currentUsers = [user0, user1, user2, user3]
 
+        // Monster.insertMany(currentMonsters)
+        // Trainer.insertMany(currentTrainers)
         return User.insertMany(currentUsers)
     })
     .then(() => {

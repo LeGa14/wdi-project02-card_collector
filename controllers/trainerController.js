@@ -1,6 +1,7 @@
 const express = require('express')
 const userRouter = express.Router()
 const trainerRouter = express.Router({ mergeParams: true })
+
 const User = require('../models/User')
 const Trainer = require('../models/Trainer')
 

@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+// const trainerRouter = require('./trainer').Router()
 const User = require('../models/User')
 
 // INDEX USER
@@ -32,10 +33,10 @@ router.post('/', (req, res) => {
 })
 
 // SHOW 
-router.get('/:id', (req, res) => {
+router.get('/:userId', (req, res) => {
 
     // define the user's ID
-    const thisUserId = req.params.id
+    const thisUserId = req.params.userId
     // find the user based on the ID 
     User.findById(thisUserId)
         // then take that user being shown
@@ -50,9 +51,9 @@ router.get('/:id', (req, res) => {
 })
 
 // EDIT 
-router.get('/:id/edit', (req, res) => {
+router.get('/:userId/edit', (req, res) => {
 
-    User.findById(req.params.id)
+    User.findById(req.params.userId)
         .then((userToChange) => {
             res.render('user/edit', { userToChange })
         })
@@ -60,17 +61,17 @@ router.get('/:id/edit', (req, res) => {
 })
 
 // UPDATE USER
-router.put('/:id', (req, res) => {
-    User.findByIdAndUpdate(req.params.id, req.body, { new: true })
+router.put('/:userId', (req, res) => {
+    User.findByIdAndUpdate(req.params.userId, req.body, { new: true })
         .then(() => {
-            res.redirect(`/user/${req.params.id}`)
+            res.redirect(`/user/${req.params.userId}`)
         })
         .catch((err) => res.send(err))
 })
 
 // DESTROY USER
-router.delete('/:id', (req, res) => {
-    User.findByIdAndRemove(req.params.id)
+router.delete('/:userId', (req, res) => {
+    User.findByIdAndRemove(req.params.userId)
         .then(() => {
             console.log('That user is no longer a Pokemon Trainer.')
             console.log('Good Riddens')
@@ -78,8 +79,10 @@ router.delete('/:id', (req, res) => {
         })    
 })
 
-// router.use('/:id/trainer', function(req, res, next) {
-//     req.id = req.params.id;
+// router.use(':userId/trainer', trainerController)
+
+// router.use('/:userId/trainer', function(req, res, next) {
+//     req.id = req.params.userId;
 //     next()
 //   }, trainer);
 

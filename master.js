@@ -1,36 +1,112 @@
-const toProperCase = (str) => {
-    return str.split(' ')
-        .map(w => w[0].toUpperCase() + w.substr(1).toLowerCase())
-        .join(' ')
+// SHOW 
+router.get('/:userId', (req, res) => {
 
-}
-class AppComponent {
-    constructor(name) {
-        this.name = name;
-        this.schemaName = `${name}Schema`;
-        this.modelName = toProperCase(this.name);
-        this.controller = `${name}Controller`;
-        `${name}` = {};
-    }
+    // define the user's ID
+    const thisUserId = req.params.userId
+    // find the user based on the ID 
+    User.findById(thisUserId)
+        // then take that user being shown
+        .then((shownUser) => {
+            // render its information using the USER SHOW view
+            res.render('user/show', {
+                // the view will receive the UserID and shownUser Object
+                thisUserId,
+                shownUser
+            })
+        })
+        .catch((err) => res.send(err))
+})
+
+
+// INDEX
+trainerRouter.get('/', (req, res) => {
+
+    // const userId = req.params.userId
+    // let currentUser = User.findById(userId)
+
+    User.findById(req.params.userId)
+        .then((user) => {
+            // listOfTrainers = user.trainers
+            user = user
+            listOfTrainers = user.trainers
+            // returned an [array]
+            res.render('trainer/index', {
+                user,
+                listOfTrainers
+            })
+        })
+        .catch((err) => res.send(err))
+})
+
+const parentShowChildIndex = (req, res) => {
+
+    User.findById(req.params.userId)
+        .then((foundUser) => {
+            res.render(`${modelName}/${route}`)
+        })
 }
 
-class User {
-    constructor(userId) {
-        this.userId = userId;
-    }
+restfulRequest = {
+    index: 'get',
+    new: 'get',
+    create: 'post',
+    show: 'get',
+    edit: 'get',
+    update: 'put',
+    delete: 'delete'
 }
 
-class Trainer extends User {
-    constructor(userId, trainerId) {
-        this.userId = userId;
-        this.trainerId = trainerId;
-    }
+restfulRoute = {
+    index: '/',
+    new: '/new',
+    create: '/',
+    show: '/:id',
+    edit: '/:id/edit',
+    update: '/:id',
+    delete: '/:id'
 }
 
-class Pokemon extends Trainer {
-    constructor(userId, trainerId, pokemonId) {
-        this.userId = userId;
-        this.trainerId = trainerId;
-        this.pokemonId = pokemonId;
-    }
+restfulResponse = {
+    index: 'res.render',
+    new: 'res.render',
+    create: 'res.redirect',
+    show: 'res.render',
+    edit: 'res.render',
+    update: 'res.redirect',
+    delete: 'res.redirect'
+}
+
+// condition for REQUESTS
+if (req = 'get'){
+    res = res.render
+} else {
+    res = res.redirect
+}
+
+// conditions for ROTUES
+if (route === index || create) {
+    route = '/'
+} else if (route === show || update || deLete) {
+    route = '/:id'
+} else if (route === new) {
+    route = '/new'
+} else if (route === edit) {
+    route = '/:id/edit'
+}
+
+
+const controllerMaker = (modelName, modelArray) => {
+    const place
+    for (index in modelArray) {
+        if (modelArray[place] === 'index' || 'create' || 'new' || 'edit') {
+            if (modelArray[place] === 'index' || 'create'){
+                scope[modelName]router.get('/', (req, res) => {})
+            } else if (modelArray[place] === 'new') {
+                (window[modelName]router).get
+            }
+            route = '/'
+        } else if (modelArray[place] === show || update || deLete) {
+            route = '/:id'
+        }
+        
 }
